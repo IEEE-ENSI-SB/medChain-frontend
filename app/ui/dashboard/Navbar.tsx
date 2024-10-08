@@ -3,11 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Bell, Gift, Menu, Moon, Sun } from 'lucide-react'
-import { DropdownMenu,
-    DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
- } from '@radix-ui/react-dropdown-menu'
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
 
 interface HeaderProps {
   sidebarOpen: boolean
@@ -16,7 +12,7 @@ interface HeaderProps {
 
 export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
   const [isDarkMode, setIsDarkMode] = useState(false)
-  
+
   const notifications = [
     { id: 1, text: 'New appointment request', time: '5m ago' },
     { id: 2, text: 'Meeting with Dr. Smith', time: '1h ago' },
@@ -46,13 +42,11 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
       <div className="flex items-center gap-4">
         {/* Notifications */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="relative">
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <Bell className="w-6 h-6 text-green-500" />
-              <span className="absolute top-0 right-0 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {notifications.length}
-              </span>
-            </button>
+          <DropdownMenuTrigger className="relative p-2 hover:bg-gray-100 rounded-lg">
+            <Bell className="w-6 h-6 text-green-500" />
+            <span className="absolute top-0 right-0 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {notifications.length}
+            </span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-80">
             {notifications.map((notification) => (
@@ -68,13 +62,11 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
 
         {/* Gifts */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="relative">
-            <button className="p-2 hover:bg-gray-100 rounded-lg">
-              <Gift className="w-6 h-6 text-green-500" />
-              <span className="absolute top-0 right-0 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {gifts.length}
-              </span>
-            </button>
+          <DropdownMenuTrigger className="relative p-2 hover:bg-gray-100 rounded-lg">
+            <Gift className="w-6 h-6 text-green-500" />
+            <span className="absolute top-0 right-0 bg-green-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {gifts.length}
+            </span>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-80">
             {gifts.map((gift) => (
