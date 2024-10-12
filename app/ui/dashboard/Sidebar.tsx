@@ -38,10 +38,6 @@ const Sidebar: FC<SidebarProps> = ({ sidebarOpen }) => {
             {sidebarOpen && <span className="ml-3">Add patient</span>}
           </Link>
 
-  
-
-          <Link href="/add-medicine" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
-
           <Link href="/Patients" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
 
             <PlusCircle className="w-5 h-5" />
