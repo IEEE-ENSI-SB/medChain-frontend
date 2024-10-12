@@ -8,10 +8,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true); // State to control sidebar
 
   return (
-    <div className="flex h-screen">
+    <div className="flex">
       <Sidebar sidebarOpen={sidebarOpen} /> {/* Pass sidebarOpen prop */}
       <div className="flex-1 flex flex-col">
-        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} /> {/* Pass setSidebarOpen to toggle */}
+        <div className="z-50">
+        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        </div> {/* Pass setSidebarOpen to toggle */}
         <main className="flex-1 p-4">{children}</main>
         <Footer />
       </div>

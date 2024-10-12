@@ -39,7 +39,6 @@ const Sidebar: FC<SidebarProps> = ({ sidebarOpen }) => {
           </Link>
 
 
-
           <Link href="/Patients" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
 
             <PlusCircle className="w-5 h-5" />
