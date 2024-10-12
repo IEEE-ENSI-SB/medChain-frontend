@@ -1,7 +1,7 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 import { FC } from 'react'
-import { Shield, Home, PlusCircle, Calendar, User, MessageSquare, Bot } from 'lucide-react'
+import { Shield, Home, Calendar, User, MessageSquare, Bot } from 'lucide-react'
 
 interface SidebarProps {
   sidebarOpen: boolean
