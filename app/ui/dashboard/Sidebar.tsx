@@ -1,7 +1,8 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 import { FC } from 'react'
-import { Shield, Home, Calendar, User, MessageSquare, Bot } from 'lucide-react'
+            <PlusCircle className="w-5 h-5" />
+            import { Shield, Home, Calendar, User, MessageSquare, Bot , PlusCircle} from 'lucide-react'
 
 interface SidebarProps {
   sidebarOpen: boolean
