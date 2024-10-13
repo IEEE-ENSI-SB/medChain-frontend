@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col h-[80vh] py-4 bg-green-200">
-      <div className="flex-1 mx-4 bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="flex-1 mx-4 bg-white rounded-lg overflow-hidden">
         <div className="h-full flex flex-col p-4">
           <div className="flex-1 overflow-y-auto border border-gray-300 rounded mb-4">
             {/* Chat history displayed here */}

@@ -1,7 +1,7 @@
 // components/Sidebar.tsx
 import Link from 'next/link'
 import { FC } from 'react'
-import { Shield, Home, PlusCircle, Calendar, User, MessageSquare, Bot } from 'lucide-react'
+import { Shield, Home, Calendar, User, MessageSquare, Bot } from 'lucide-react'
 
 interface SidebarProps {
   sidebarOpen: boolean
@@ -17,22 +17,37 @@ const Sidebar: FC<SidebarProps> = ({ sidebarOpen }) => {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 px-2 py-4">
+      <nav className="flex-1 px-2 py-6">
         <div className="space-y-1">
           <Link href="/dashboard" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
             <Home className="w-5 h-5" />
             {sidebarOpen && <span className="ml-3 ">Dashboard</span>}
           </Link>
+          <Link href="/Doctors" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
+            <User className="w-5 h-5" />
+            {sidebarOpen && <span className="ml-3">Doctors</span>}
+          </Link>
+          
+     <Link href="/add-doctor" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
+            <PlusCircle className="w-5 h-5" />
+            {sidebarOpen && <span className="ml-3">Add doctor</span>}
+          </Link>
 
+          <Link href="/add-patient" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
+            <PlusCircle className="w-5 h-5" />
+            {sidebarOpen && <span className="ml-3">Add patient</span>}
+          </Link>
+
+
+          <Link href="/Patients" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
+
+            <PlusCircle className="w-5 h-5" />
+            {sidebarOpen && <span className="ml-3">Patients</span>}
+          </Link>
 
           <Link href="/appointments" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
             <Calendar className="w-5 h-5" />
             {sidebarOpen && <span className="ml-3">All Appointments</span>}
-          </Link>
-
-          <Link href="/user" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
-            <User className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-3">User</span>}
           </Link>
 
           <Link href="/chat" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
