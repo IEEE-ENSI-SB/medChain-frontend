@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import {
   Table,
@@ -42,7 +41,7 @@ const initialDoctors: Doctor[] = [
   {
     id: "#D-001",
     speciality: "Cardiology",
-    firstName: "Mr. Daulat ",
+    firstName: "Daulat ",
     lastName: "Hussain",
     email: "theblockchaincoders@gmail.com",
     adress: "adress",
@@ -55,7 +54,7 @@ const initialDoctors: Doctor[] = [
   {
     id: "#D-002",
     speciality: "Cardiology",
-    firstName: "Mr. John Smith",
+    firstName: "John Smith",
     lastName: "Smith",
     email: "john.smith@example.com",
     adress: "adress",
@@ -68,7 +67,7 @@ const initialDoctors: Doctor[] = [
   {
     id: "#D-003",
     speciality: "Pediatrics",
-    firstName: "Mrs. Emily Johnson",
+    firstName: "Emily Johnson",
     lastName: "Smith",
     email: "emily.johnson@example.com",
     adress: "adress",
@@ -81,7 +80,7 @@ const initialDoctors: Doctor[] = [
   {
     id: "#D-004",
     speciality: "Neurology",
-    firstName: "Mrs. Michael Brown",
+    firstName: "Michael Brown",
     lastName: "Smith",
     email: "michael.brown@example.com",
     adress: "adress",
@@ -94,7 +93,7 @@ const initialDoctors: Doctor[] = [
   {
     id: "#D-005",
     speciality: "Dermatology",
-    firstName: "Mr. Sarah Davis",
+    firstName: "Sarah Davis",
     lastName: "Smith",
     email: "sarah.davis@example.com",
     adress: "adress",
@@ -116,9 +115,9 @@ const DoctorList: React.FC = () => {
     firstName: "",
     lastName: "",
     email: "",
-    adress: "adress",
+    adress: "",
     contact: "",
-    imageUrl: "/default-avatar.png",
+    imageUrl: "",
     password:"",
     codeCNOM :"",
     codeCNAM :"",
@@ -135,14 +134,15 @@ const DoctorList: React.FC = () => {
     
     const { name, value } = e.target; //e.target.name &&  e.target.value//
 
-    setNewDoctor((prev) => ({ ...prev, [name]: value }));
+    setNewDoctor((prev) => ({ ...prev, [name]: value }));//pour conserver tous les champs de form lors de remplir "prev"
+    
   };
 
   // Handle adding a new doctor
   const handleAddDoctor = () => {
     const newId = `#D-${doctors.length + 1}`;
     setDoctors([...doctors, { ...newDoctor, id: newId }]);
-    setNewDoctor({
+    setNewDoctor({ // Reset newDoctor state
       id: "",
       speciality: "",
       firstName: "",
@@ -150,7 +150,7 @@ const DoctorList: React.FC = () => {
       email: "",
       adress: "",
       contact: "",
-      imageUrl: "/default-avatar.png",
+      imageUrl: "",
       password:"",
       codeCNOM :"",
       codeCNAM :"",
@@ -199,7 +199,7 @@ const DoctorList: React.FC = () => {
               <TableCell>speciality</TableCell>
               <TableCell>FirstName</TableCell>
               <TableCell>LastName</TableCell>
-              <TableCell>Email ID</TableCell>
+              <TableCell>Email</TableCell>
               <TableCell>Adress</TableCell>
               <TableCell>Contact</TableCell>
               <TableCell>codeCNOM</TableCell>
@@ -217,7 +217,6 @@ const DoctorList: React.FC = () => {
                 <TableCell>{doctor.lastName}</TableCell>
                 <TableCell>{doctor.email}</TableCell>
                 <TableCell> {doctor.adress}</TableCell>
-              
                 <TableCell>{doctor.contact}</TableCell>
                 <TableCell>{doctor.codeCNOM}</TableCell>
                 <TableCell>{doctor.codeCNAM}</TableCell>
@@ -241,7 +240,7 @@ const DoctorList: React.FC = () => {
             variant="outlined"
             onChange={handleInputChange}
           />
-                    <TextField
+           <TextField
             autoFocus
             margin="dense"
             name="lastName"
@@ -283,7 +282,7 @@ const DoctorList: React.FC = () => {
           <TextField
             margin="dense"
             name="email"
-            label="Email ID"
+            label="Email"
             type="email"
             fullWidth
             variant="outlined"
