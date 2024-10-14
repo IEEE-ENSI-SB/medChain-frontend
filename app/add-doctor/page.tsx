@@ -210,8 +210,11 @@ const DoctorList: React.FC = () => {
             {filteredDoctors.map((doctor) => (
               <TableRow key={doctor.id}>
                 <TableCell>
-                  <Avatar alt={doctor.firstName} src={doctor.imageUrl} /> {doctor.id}
-                </TableCell>
+              <Avatar>
+                {doctor.firstName.charAt(0).toUpperCase()}
+              </Avatar>
+              {doctor.id}
+            </TableCell>
                 <TableCell>{doctor.speciality}</TableCell>
                 <TableCell>{doctor.firstName}</TableCell>
                 <TableCell>{doctor.lastName}</TableCell>
