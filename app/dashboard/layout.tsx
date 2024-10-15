@@ -31,7 +31,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <div className="flex h-screen bg-green-50">
+    <div className="flex bg-green-50">
       {/* Pass sidebarOpen prop and check for small screens */}
       <Sidebar sidebarOpen={sidebarOpen} isSmallScreen={isSmallScreen} />
       <div className="flex-1 flex flex-col">

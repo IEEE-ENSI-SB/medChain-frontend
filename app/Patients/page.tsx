@@ -134,25 +134,29 @@ const PatientList: React.FC = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-        <div  style={{ display: "flex", justifyContent: "space-between" }}>
+        <div  style={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}>
 
-            <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>
+            <Button variant="contained" color="success" onClick={() => setDialogOpen(true)}>
             + Add Patient
             </Button>
-            <TextField
+           
+        <TextField
             variant="outlined"
             placeholder="Search here"
             onChange={handleSearch}
+            sx={{
+              display: { xs: "none", sm: "block" }, // Hide on xs, show on sm+
+            }}
             InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton>
+                    <SearchIcon />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
 
         </div>
    

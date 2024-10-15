@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 interface Appointment {
     patient: {
@@ -130,7 +131,7 @@ return (
                 >
                     <td className="px-4 py-2 flex items-center whitespace-nowrap hover:text-green-500"> 
                         {appointment.patient.avatar ? (
-                        <img
+                        <Image
                             src={appointment.patient.avatar}
                             alt="Patient Avatar"
                             width={40}

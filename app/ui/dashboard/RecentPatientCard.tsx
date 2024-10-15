@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-
+import Image from 'next/image';
 type Patient = {
     name: string;
     location: string;
@@ -18,15 +18,17 @@ const RecentPatientCard = () => {
         <div className="bg-white p-4 rounded-md shadow-md w-full max-w-xs">
             <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold">Recent Patient</h2>
-                <Link href="add-patient" className="text-green-500 text-sm">View more &gt;&gt;</Link>
+                <Link href="Patients" className="text-green-500 text-sm">View more &gt;&gt;</Link>
             </div>
             <div className="mt-4 space-y-4">
                 {patients.map((patient, index) => (
                     <div key={index} className="flex items-center space-x-4">
-                        <img
+                        <Image
                             src={patient.imageUrl}
                             alt={patient.name}
-                            className="w-10 h-10 rounded-full object-cover"
+                            className="rounded-full object-cover"
+                            width={40}
+                            height={20}
                         />
                         <div>
                             <p className="font-medium">{patient.name}</p>
