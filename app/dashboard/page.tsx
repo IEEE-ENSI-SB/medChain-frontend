@@ -7,7 +7,7 @@ import RecentPatientCard from '../ui/dashboard/RecentPatientCard';
 
 const Dashboard = () => {
     const [selectedStatistic, setSelectedStatistic] = useState("Monthly")
-    const [balence, setBalance] = useState(10241.98)
+    const [balence] = useState(10241.98)
     return (
         <div className=" px-4 py-4 bg-green-50">
             <h1 className='font-bold text-xl'>Welcome to MedChain !</h1>
