@@ -44,7 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ sidebarOpen }) => {
             {sidebarOpen && <span className="ml-3">Chat</span>}
           </Link>
 
-          <Link href="/ask-ai" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
+          <Link href="/AI" className="flex items-center px-2 py-2 text-gray-700 rounded-lg hover:bg-gray-50">
             <Bot className="w-5 h-5" />
             {sidebarOpen && <span className="ml-3">Ask AI</span>}
           </Link>
