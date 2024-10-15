@@ -1,8 +1,8 @@
-// app/ui/dashboard/Header.tsx
-import {  Menu } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import NotificationButton from '../Navbar/NotificationButton'
 import UserAvatarDropdown from '../Navbar/UserButton'
-
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 interface HeaderProps {
   sidebarOpen: boolean
@@ -10,7 +10,25 @@ interface HeaderProps {
 }
 
 export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
-  
+  const pathname = usePathname()
+
+  const getBreadcrumbs = () => {
+    const paths = pathname.split('/').filter(Boolean)
+    
+    // If we're on the dashboard, return only "Dashboard"
+    if (paths.length === 0 || paths[0].toLowerCase() === 'dashboard') {
+      return [{ name: 'Dashboard', href: '/dashboard' }]
+    }
+    
+    // For other pages, return "Dashboard" and the current page
+    return [
+      { name: 'Dashboard', href: '/dashboard' },
+      { name: paths[paths.length - 1].charAt(0).toUpperCase() + paths[paths.length - 1].slice(1), href: pathname }
+    ]
+  }
+
+  const breadcrumbs = getBreadcrumbs()
+
   return (
     <header className="h-16 px-4 bg-white border-b border-gray-200 flex items-center justify-between">
       {/* Left section */}
@@ -21,17 +39,23 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
         >
           <Menu className="w-6 h-6" />
         </button>
-        <h1 className={`text-xl text-gray-800 font-semibold transition-all ${sidebarOpen ? 'block' : 'hidden'}`}>
-          Dashboard
-        </h1>
+        <nav className="flex" aria-label="Breadcrumb">
+          <ol className="inline-flex items-center space-x-1 md:space-x-3">
+            {breadcrumbs.map((crumb, index) => (
+              <li key={crumb.href} className="inline-flex items-center">
+                {index > 0 && <span className="mx-2 text-gray-400">/</span>}
+                <Link href={crumb.href} className="text-sm font-medium text-gray-700 hover:text-blue-600">
+                  {crumb.name}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
       </div>
       {/* Right section */}
       <div className="flex items-center gap-4">
-        {/* Notifications */}
-       <NotificationButton/>
-        {/* Gifts */}
-        {/* User Avatar */}
-        <UserAvatarDropdown/>
+        <NotificationButton />
+        <UserAvatarDropdown />
       </div>
     </header>
   )

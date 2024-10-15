@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+// next.config.mjs
+const nextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+      domains: ['img.freepik.com'],
+    },
+  };
+  
+  export default nextConfig;
+  

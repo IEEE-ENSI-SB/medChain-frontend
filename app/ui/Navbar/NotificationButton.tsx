@@ -7,7 +7,7 @@ import { USER_NOTIFICATIONS } from '../../constant';
 
 export default function NotificationButton() {
   return (
-    <DropdownMenu>
+    <DropdownMenu >
       <DropdownMenuTrigger asChild>
         <button className="relative bg-white rounded-full p-3 hover:bg-gray-50">
           <Bell className="w-6 h-6 text-green-600" />
