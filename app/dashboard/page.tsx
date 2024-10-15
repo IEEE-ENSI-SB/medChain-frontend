@@ -6,6 +6,7 @@ import { HeartPulse, Stethoscope, Calendar, Bell } from 'lucide-react';
 import RecentPatientCard from '../ui/dashboard/RecentPatientCard';
 
 const Dashboard = () => {
+
     const [selectedStatistic, setSelectedStatistic] = useState("Monthly")
     const [balance] = useState(10241.98)
 
