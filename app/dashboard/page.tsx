@@ -9,39 +9,40 @@ const Dashboard = () => {
     const [selectedStatistic, setSelectedStatistic] = useState("Monthly")
     const [balence] = useState(10241.98)
     return (
-        <div className="container px-4 py-4 bg-green-50">
+        <div className=" px-4 py-4 bg-green-50">
             <h1 className='font-bold text-xl'>Welcome to MedChain !</h1>
             <p>Hospital Decenteralized Medical Center</p>
-            <div className="flex gap-4 flex-warp mt-3">
-                <MetricCard
-                    title="Total Patient"
-                    value={5}
-                    change={4}
-                    Icon={HeartPulse}
-                    backgroundColor="bg-red-400"
-                />
-                <MetricCard
-                    title="Doctor"
-                    value={4}
-                    change={-4}
-                    Icon={Stethoscope}
-                    backgroundColor="bg-green-400"
-                />
-                <MetricCard
-                    title="Appointment"
-                    value={6}
-                    change={2}
-                    Icon={Calendar}
-                    backgroundColor="bg-blue-400"
-                />
-                <MetricCard
-                    title="Notifications"
-                    value={48}
-                    change={5}
-                    Icon={Bell}
-                    backgroundColor="bg-purple-400"
-                />
-            </div>
+            <div className="grid gap-4 mt-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+  <MetricCard
+    title="Total Patient"
+    value={5}
+    change={4}
+    Icon={HeartPulse}
+    backgroundColor="bg-red-400"
+  />
+  <MetricCard
+    title="Doctor"
+    value={4}
+    change={-4}
+    Icon={Stethoscope}
+    backgroundColor="bg-green-400"
+  />
+  <MetricCard
+    title="Appointment"
+    value={6}
+    change={2}
+    Icon={Calendar}
+    backgroundColor="bg-blue-400"
+  />
+  <MetricCard
+    title="Notifications"
+    value={48}
+    change={5}
+    Icon={Bell}
+    backgroundColor="bg-purple-400"
+  />
+</div>
+
 
             <div className='flex gap-4 flex-warp mt-4 mb-4'>
                 <div className="bg-white p-4 rounded-md shadow-md flex justify-between items-center w-full max-w-xs">
